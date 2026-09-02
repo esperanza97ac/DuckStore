@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="contacto.css" />
     <link rel="stylesheet" href="styles_contacto.css" />
     <title>QuackStore</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -45,7 +46,13 @@
         <section class="tarjeta formulario">
           <h3>Envíanos un Mensaje</h3>
           <!-- Aquí irán tus inputs más adelante -->
-          <form action="#" method="POST" class="formulario-contacto">
+          <form
+            action="#"
+            method="POST"
+            id="miFormulario"
+            class="formulario-contacto"
+            novalidate
+          >
             <!-- Grupo 1: Nombre -->
             <section class="fila-campos">
               <!-- Campo: Nombre -->
@@ -54,6 +61,7 @@
                 <input
                   type="text"
                   id="nombre"
+                  class="validable"
                   name="nombre"
                   placeholder="Tu nombre"
                   required
@@ -66,6 +74,7 @@
                 <input
                   type="email"
                   id="correo"
+                  class="validable"
                   name="correo"
                   placeholder="tu@email.com"
                   required
@@ -79,6 +88,7 @@
               <input
                 type="text"
                 id="asunto"
+                class="validable"
                 name="asunto"
                 placeholder="¿En qué podemos ayudarte?"
                 required
@@ -90,6 +100,7 @@
               <label for="mensaje">Mensaje</label>
               <textarea
                 id="mensaje"
+                class="validable"
                 name="mensaje"
                 rows="6"
                 placeholder="Escribe tu mensaje aquí..."
