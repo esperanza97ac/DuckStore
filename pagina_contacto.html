@@ -1,92 +1,194 @@
 <!doctype html>
-<html lang="Encuéntranos">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Una tienda minimalista especializada en accesorios de patos."
-    />
 
-    <link rel="stylesheet" href="index.css" />
-    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Playfair+Display:wght@700;800&display=swap"
       rel="stylesheet"
     />
-
-    <title>Document</title>
+    <link rel="stylesheet" href="contacto.css" />
+    <link rel="stylesheet" href="styles_contacto.css" />
+    <title>QuackStore</title>
   </head>
   <body>
     <header>
-      <h1>QuackStore</h1>
-      <p>Tu tienda lifestyle de temática pato</p>
+      <div class="header-contenido">
+        <img src="logo_QS_SF.png" alt="Logo de QuackStore" class="logo" />
+        <div class="texto-header">
+          <h1>QuackStore</h1>
+          <p>Tu tienda lifestyle de temática pato</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Catálogo</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-
     <main>
-      <article>
-        <h1>TITULO</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-          voluptatum delectus suscipit hic culpa iusto, sunt voluptatibus
-          numquam? Eius est illum nulla, delectus ea quos! Natus minima
-          perferendis inventore soluta.
+      <article class="introduccion">
+        <h2>Contacta con el Estanque</h2>
+        <p class="indroduccion-texto">
+          ¿Tienes alguna pregunta sobre nuestros patos de colección?¿Necesitas
+          ayuda con un pedido?Estamos aqui para ayudarte amantener tu colección
+          impecable.
         </p>
       </article>
-      <section>
-        <form action="123" name="Formulario de contacto" accept-charset="utf-8">
-          <fieldset>
-            <legend>Contactos</legend>
-            <label>
-              <input type="text" name="1" value="input1" />
-            </label>
-            <label>
-              <input type="text" name="2" value="input2" />
-            </label>
-            <label>
-              <input type="text" name="3" value="input3" />
-            </label>
-            <label>
+      <!-- Bloque 1: El Formulario -->
+      <section class="contenedor-principal">
+        <section class="tarjeta formulario">
+          <h3>Envíanos un Mensaje</h3>
+          <!-- Aquí irán tus inputs más adelante -->
+          <form action="#" method="POST" class="formulario-contacto">
+            <!-- Grupo 1: Nombre -->
+            <section class="fila-campos">
+              <!-- Campo: Nombre -->
+              <section class="grupo-campo">
+                <label for="nombre">Nombre</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre"
+                  required
+                />
+              </section>
+
+              <!-- Campo: Correo -->
+              <section class="grupo-campo">
+                <label for="correo">Correo Electrónico</label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  placeholder="tu@email.com"
+                  required
+                />
+              </section>
+            </section>
+
+            <!-- Campo: Asunto (Nuevo campo que ocupa todo el ancho) -->
+            <section class="grupo-campo">
+              <label for="asunto">Asunto</label>
+              <input
+                type="text"
+                id="asunto"
+                name="asunto"
+                placeholder="¿En qué podemos ayudarte?"
+                required
+              />
+            </section>
+
+            <!-- Grupo 3: Mensaje -->
+            <section class="grupo-campo">
+              <label for="mensaje">Mensaje</label>
               <textarea
-                name="Cuadro de texto"
-                placeholder="soy un cuadro de texto"
+                id="mensaje"
+                name="mensaje"
+                rows="6"
+                placeholder="Escribe tu mensaje aquí..."
+                required
               ></textarea>
-            </label>
-            <button type="submit">Enviar</button>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <h2>Encuentranos</h2>
-        <section>
-          <img src="" alt="Icono de dirrecion" />
-          <h3>Direccion</h3>
-          <a href="https://www.google.com/maps?authuser=0">Direccion</a>
+            </section>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="boton-enviar">
+              <span>Enviar Mensaje</span>
+              <!-- Icono del avión de papel estándar -->
+              <svg
+                class="icono-btn icono-avion"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
         </section>
-        <section>
-          <img src="" alt="Icono de email" />
-          <h3>Email</h3>
-          <a href="https://workspace.google.com/intl/es/gmail/">Email</a>
+
+        <!-- Bloque 2: Datos de Contacto -->
+        <section class="tarjeta informacion">
+          <h3>Encuéntranos</h3>
+          <!-- Aquí irán tus teléfonos y emails -->
+          <ul class="lista-contacto">
+            <li>
+              <span class="icono"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <article class="texto-contacto">
+                <strong>Dirección</strong>
+                <span
+                  >Calle del Estanque, 42, <br />
+                  28001 Madrid</span
+                >
+              </article>
+            </li>
+
+            <li>
+              <span class="icono"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              </span>
+              <article class="texto-contacto">
+                <strong>Teléfono</strong>
+                <a href="tel:+34912345678">+34 912 345 678</a>
+              </article>
+            </li>
+
+            <li>
+              <span class="icono"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <article class="texto-contacto">
+                <strong>Correo electrónico</strong>
+                <a href="mailto:info@duckstore.com">info@duckstore.com</a>
+              </article>
+            </li>
+          </ul>
         </section>
-        <section>
-          <img src="" alt="Telefono" />
-          <h3>Telefono</h3>
-          <p>123 123 123</p>
-        </section>
-        <section>
+
+        <!-- Bloque 3: Ubicación / Mapa -->
+        <section class="tarjeta-mapa">
+          <!-- Aquí irá tu mapa -->
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17393.965787208!2d-3.9440447008347124!3d40.02683932978314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2ses!4v1788081152790!5m2!1ses-419!2ses"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3043.204987275067!2d-3.8190064887142294!3d40.293407271340506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418b849458cdb3%3A0x6967a4c7e325eb2b!2sC.%20del%20Estanque%2C%2042%2C%2028942%20Fuenlabrada%2C%20Madrid!5e0!3m2!1ses-419!2ses!4v1788349631014!5m2!1ses-419!2ses"
             width="600"
             height="450"
             style="border: 0"
@@ -98,7 +200,7 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2026 QuackStore. Stay Quacky. Todos los derechos reservados.</p>
+      <p>&copy; 2026 QuackStore. Stay quacking!</p>
     </footer>
   </body>
 </html>
