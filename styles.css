@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #fda4af;       
+    --primary-dark: #1e293b;  
+    --secondary-yellow: #fde047;
+    --secondary-blue: #7dd3fc;
+    --background: #f9f9ff;
+}
+
+body {
+   font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--background);
+    color: var(--primary-dark);
+    line-height: 1.6;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, h7, h8, h9 {
+    font-family: 'Playfair Display', serif;
+}
+
+header {
+    background-color: var(--secondary-blue); 
+    text-align: center;
+}
+
+.header-contenido {
+    display: flex;
+    align-items: center;     /* Centra la altura del pato respecto al bloque de texto */
+    justify-content: center; /* Centra todo el conjunto en la pantalla */
+    gap: 8px;  
+    padding: 1rem 0.5rem;             
+}
+
+.texto-header {
+    text-align: center;
+}
+
+.texto-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--primary-dark);
+}
+
+.texto-header p {
+   font-size: 1rem;
+    color: var(--primary-dark);
+    margin-top: 0.5rem;
+}
+
+.linea-pato {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;   
+    gap: 1px;            
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+header h1 {
+   font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+nav {
+    background-color: var(--primary);
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 0;
+
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+   color: white; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: var(--primary-dark);
+}
+
+main {
+   padding: 2rem 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+.botton-continuar {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #fda4af;
+    color: #fafcff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.botton-continuar2 {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #7dd3fc;
+    color: #fafcff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    background-color: #fda4af;
+    margin-right: auto;
+    text-align: center;
+}
+.card-secondary {
+    background-color: #7dd3fc;
+    color: var(--primary-dark);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    margin-left: auto;
+    text-align: center;
+}
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row; 
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1.5rem; 
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px; 
+        margin: 0 auto;   
+        padding: 4rem 2rem;
+    }
+}
