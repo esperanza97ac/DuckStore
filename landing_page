@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>QuackStore</title>
+    <meta name="description" content="Una tienda minimalista especializada en accesorios de patos." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+         <div class="header-contenido">
+            <img src="logo_QS_SF.png" alt="Logo de QuackStore" class="logo">
+            <div class="texto-header">
+                <h1>QuackStore</h1>
+                <p>Tu tienda lifestyle de temática pato</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+    <main>
+        <section class="bienvenida">
+
+            <h2>QuackStore: Tu aliado en compras divertidas y seguras</h2>
+            <p>Nuestra misión es hacer que cada compra sea una experiencia alegre y organizada.
+             Descubre un mundo donde la calidad se encuentra con la diversión.</p>
+             <img src="tienda.jpg" alt="Imagen de la tienda">
+             
+        </section>
+         <section class="button-container">
+          <a href="#" class="botton-continuar">Explorar la tienda</a>
+          <a href="#" class="botton-continuar2">ⓘ</span>Saber más</a>
+          </section>
+
+         <section class="productos">
+          <h3>Nuestros objetivos</h3>
+          <p>QuackStore se enfoca en proveer productos de alta calidad centrados en la alegria del cliente y un comercio eficiente. No solo vendemos, creamos momentos de alegría para nuestros clientes.</p>
+         </section>
+         <div>
+         <div class="card-container">
+         <section class="card-container">
+            <articule class="card-primary"><h4>Eretail Eficiente</h4>
+            <p class="card-description">Proceso optimizados para que encuentres lo que necesitas sin fricciones, en un ambiente diseñado para tu comodidas.</p>
+            </a>
+        </section></div>
+         
+          <div class="card-container">
+            <section class="card-secondary"- >
+            <articule class="card-secondary"><h5>Alegría Pura</h5>
+            <p class="card-description">Cada interacción está pensada para sacarte una sonrisa.</p>
+            </a>
+            </section>
+            </div>
+        </div>
+
+        <div class="card-container">
+        <section class="card-primary" >
+            <a class="card-right"><h4>Calidad y Diversión</h4>
+            <p class="card-description">Cada producto es seleccionado cuidadosamente para garantizar que cumpla con los más altos estándares de calidad, mientras que la diversión es el núcleo de nuestra experiencia de compra.</p>
+            </a>
+        </section> 
+        <section class="card-secondary" >
+            <articule class="card-secondary"><h5>Experiencia del Cliente</h5>
+            <p class="card-description">Nos esforzamos por ofrecer una experiencia de compra sin fricciones, asegurando que cada interacción sea positiva y memorable.</p>
+            </a>
+        </section>
+        </div>
+
+          <section class="productos">
+            <h6>Por qué elegirnos</h6>
+            <p>Explora nuestra selección de productos cuidadosamente curados para ofrecerte lo mejor en calidad y diversión.</p>
+          </section>
+        <div class="card-container">
+          <section class="card-container ">
+            <a class="card-primary "><h7>Envios Rapidos</h7>
+                <p class="card-description">Velocidad en cada entrega para que disfrutes de tus compras sin demoras, manteniendo la eficiencia en todo momento.</p>
+            </a>
+            </section>
+            <section class="card-container">
+            <a class="card-secondary"><h8>Calidad Garantizada.</h8>
+            <p class="card-description">Seleccionamos rigurosamente cada producto. Si está en QuackStore, cumple con las más altos estándares de calidad.</p>
+            </a>
+            </section>
+            <section class="card-container">
+            <a class="card-secondary"><h9>Experiencia Juguetona.</h9>
+            <p class="card-description">Diseñamos una plataforma cálida, amigable y llena de energía positiva para que comprar sea siempre un placer.</p>
+            </a>
+        </section>
+        
+         </section>
+         </div>
+
+         <div>
+         <section class="cta-card">
+        <!-- Reemplazar el emoji por un SVG si tienes el logo original -->
+        <div class="cta-icon" aria-hidden="true">🐰</div>
+        
+        <h7 class="cta-title">
+            "Esparciendo <span>alegría organizada</span><br>en cada rincón."
+        </h7>
+        
+        <p class="cta-description">
+            Únete a miles de clientes felices que ya han transformado su manera de comprar con DuckStore.
+        </p>
+        <div class="cta-button-container">
+        <a href="#" class="cta-button">Explorar la tienda <span>&rarr;</span>
+        </a></div>
+        </div>
+        </section>
+        </div>
+
+
+    </main>
+    
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 QuackStore. Stay Quacky. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
 
