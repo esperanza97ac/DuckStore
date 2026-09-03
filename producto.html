@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DuckStore - Detalle del Producto Pijama Oficial DuckStore</title>
+
+    <!-- ENLACE ADAPTADO A TU DISPOSICIÓN LOCAL EN LA MISMA CARPETA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles_producto.css" />
+
+    <style>
+      /* ==========================================================================
+           1. ESTILOS EXCLUSIVOS DE LA FICHA DE PRODUCTO
+           ========================================================================== */
+      .component-wrapper {
+        max-width: 1100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      /* BLOQUE SUPERIOR (Fotos + Compra) */
+      .product-container {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        width: 100%;
+      }
+
+      .product-gallery {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 300px;
+      }
+
+      .main-image-box {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 16px;
+      }
+
+      .thumbnails-container {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        width: 100%; /* Obliga a la fila a medir lo mismo que la foto grande */
+      }
+
+      .thumb-btn {
+        flex: 1;
+        aspect-ratio: 1 / 1;
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        background: none;
+      }
+
+      .thumb-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 300px;
+        text-align: left;
+      }
+
+      .product-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--neutral-navy);
+      }
+
+      .price-stock-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .product-price {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--neutral-navy);
+      }
+
+      .stock-badge {
+        background-color: #e0f2fe;
+        color: #0284c7;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .product-description {
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .option-block {
+        border-top: 1px solid #e2e8f0;
+        padding-top: 15px;
+      }
+
+      .option-title {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--neutral-navy);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      /* SELECTORES LIMPIOS (SIN BORDES DE SELECCIÓN POR DEFECTO) */
+      .size-selector {
+        display: flex;
+        gap: 10px;
+      }
+
+      .size-btn {
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        min-width: 50px;
+        transition: all 0.2s ease;
+      }
+
+      .color-selector {
+        display: flex;
+        gap: 12px;
+      }
+
+      .color-btn {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid #cbd5e1;
+        cursor: pointer;
+      }
+
+      .color-yellow {
+        background-color: var(--primary);
+      }
+      .color-pink {
+        background-color: var(--secondary-pink);
+      }
+      .color-blue {
+        background-color: var(--secondary-blue);
+      }
+
+      /* ACCIONES DE COMPRA */
+      .actions-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 15px;
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        border: 1px solid #cbd5e1;
+        border-radius: 20px;
+        padding: 4px 8px;
+        background-color: #ffffff;
+      }
+
+      .quantity-btn {
+        background: none;
+        border: none;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        color: #64748b;
+      }
+
+      .quantity-input {
+        width: 30px;
+        text-align: center;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        flex: 2;
+        background-color: var(--primary);
+        border: none;
+        color: var(--neutral-navy);
+        padding: 14px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .btn-secondary {
+        flex: 1;
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        color: var(--neutral-navy);
+        padding: 14px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      /* BLOQUE INFERIOR (Especificaciones) */
+      .details-section {
+        border-top: 1px solid #e2e8f0;
+        padding-top: 30px;
+        text-align: left;
+      }
+
+      .details-heading {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--neutral-navy);
+        margin-bottom: 20px;
+      }
+
+      .details-layout {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      .details-text-block {
+        flex: 1.2;
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .details-specs-block {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        flex: 0.8;
+      }
+
+      .spec-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #e2e8f0;
+        font-size: 0.9rem;
+      }
+
+      .spec-row:last-child {
+        border-bottom: none;
+      }
+      .spec-label {
+        font-weight: 600;
+        color: #64748b;
+      }
+      .spec-value {
+        font-weight: 500;
+        color: var(--neutral-navy);
+        text-align: right;
+      }
+
+      /* REJILLA DE ARTÍCULOS SIMILARES */
+      .related-section {
+        border-top: 1px solid #e2e8f0;
+        padding-top: 40px;
+        text-align: left;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .product-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+      }
+
+      .card-img-box {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: #f8fafc;
+        border-radius: 8px;
+      }
+
+      .card-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .card-price {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .card-btn {
+        background-color: #ffd23f;
+        border: none;
+        color: #1e293b;
+        padding: 8px;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        cursor: pointer;
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .card-fav-icon {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        background: white;
+        border: 1px solid #cbd5e1;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: #64748b;
+      }
+
+      /* RESPONSIVE MÓVIL */
+      @media (max-width: 768px) {
+        .product-container {
+          flex-direction: column;
+        }
+        .actions-row {
+          flex-direction: column;
+          align-items: stroke;
+        }
+        .details-layout {
+          flex-direction: column;
+          gap: 25px;
+        }
+        .related-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CABECERA OFICIAL DE TU COMPAÑERA -->
+    <header>
+      <div class="header-contenido">
+        <img
+          src="FotosProducto/logo_QS_SF.png"
+          alt="Logo de QuackStore"
+          class="logo"
+        />
+        <div class="texto-header">
+          <h1>QuackStore</h1>
+          <p>Tu tienda lifestyle de temática pato</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="landing_page.html">Inicio</a></li>
+          <li><a href="catalogue.html">Catálogo</a></li>
+          <li><a href="pagina_contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTENEDOR ENVOLVENTE GENERAL -->
+    <div class="component-wrapper">
+      <!-- BLOQUE DE COMPRA PRINCIPAL -->
+      <div class="product-container">
+        <div class="product-gallery">
+          <!-- 1. AQUÍ METES LA IMAGEN PRINCIPAL GRANDE -->
+          <div class="main-image-box">
+            <img
+              src="FotosProducto/img_principal_zapatos_patitos.png"
+              alt="Las ``Patuflas´´"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+              "
+            />
+          </div>
+
+          <!-- 2. AQUÍ METES LAS 4 IMÁGENES ADICIONALES (UNA DENTRO DE CADA BOTÓN) -->
+          <div class="thumbnails-container">
+            <button type="button" class="thumb-btn">
+              <img
+                src="FotosProducto/img_adicional_1.png"
+                alt="Imagen Adicional del Artículo"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 12px;
+                "
+              />
+            </button>
+            <button type="button" class="thumb-btn">
+              <img
+                src="FotosProducto/img_adicional_2.png"
+                alt="Imagen Adicional del Artículo"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 12px;
+                "
+              />
+            </button>
+            <button type="button" class="thumb-btn">
+              <img
+                src="FotosProducto/img_adicional_3.png"
+                alt="Imagen Adicional del Artículo"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 12px;
+                "
+              />
+            </button>
+            <button type="button" class="thumb-btn">
+              <img
+                src="FotosProducto/img_adicional_4.png"
+                alt="Imagen Adicional del Artículo"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 12px;
+                "
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOQUE DE TEXTOS E INFORMACIÓN DE COMPRA -->
+        <div class="product-info">
+          <div>
+            <h1 class="product-title">Las ``Patuflas´´</h1>
+            <div class="price-stock-row">
+              <span class="product-price">30.00 €</span>
+              <span class="stock-badge">Disponible</span>
+            </div>
+          </div>
+
+          <p class="product-description">
+            Disfruta del máximo confort con nuestro producto Oficial de nuestra
+            marca QuackStore. Confeccionado en algodón ultra suave y
+            transpirable, este modelo cuenta con un divertido y minimalista
+            estampado de patitos. Perfecto para las mañanas de descanso de los
+            fines de semana o para dormir con total comodidad y estilo.
+          </p>
+
+          <!-- Tallas -->
+          <div class="option-block">
+            <span class="option-title">Tallas disponibles</span>
+            <div class="size-selector">
+              <button type="button" class="size-btn">S</button>
+              <button type="button" class="size-btn">M</button>
+              <button type="button" class="size-btn">L</button>
+              <button type="button" class="size-btn">XL</button>
+            </div>
+          </div>
+
+          <!-- Colores -->
+          <div class="option-block">
+            <span class="option-title">Colores disponibles</span>
+            <div class="color-selector">
+              <button
+                type="button"
+                class="color-btn"
+                style="background-color: #ffe66d"
+              ></button>
+              <button
+                type="button"
+                class="color-btn"
+                style="background-color: #ffb6b9"
+              ></button>
+              <button
+                type="button"
+                class="color-btn"
+                style="background-color: #add8e6"
+              ></button>
+              <button
+                type="button"
+                class="color-btn"
+                style="background-color: #fcfcfc"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Selector de cantidad y botones de acción -->
+          <div class="actions-row">
+            <div class="quantity-selector">
+              <button type="button" class="quantity-btn">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                value="1"
+                min="1"
+                readonly
+              />
+              <button type="button" class="quantity-btn">+</button>
+            </div>
+
+            <button
+              type="button"
+              class="btn-primary"
+              style="background-color: #ffd23f"
+            >
+              Añadir al carrito
+            </button>
+            <button type="button" class="btn-secondary">
+              ♡ Añadir a Favoritos
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPECIFICACIONES Y DETALLES TÉCNICOS -->
+      <div class="details-section">
+        <h2 class="details-heading">Especificaciones / Detalles</h2>
+        <div class="details-layout">
+          <div class="details-text-block">
+            <p>
+              Siente la comodidad definitiva en tus pies con las zapatillas de
+              descanso oficiales de QuackStore. Este modelo está meticulosamente
+              confeccionado con un forro interior de felpa ultra suave que
+              simula el tacto de una nube, manteniendo tus pies calientes en las
+              mañanas de invierno. El exterior está diseñado con un divertido y
+              mullido relieve tridimensional en forma de nuestro icónico patito
+              de goma. Cuentan con una suela de goma ligera y totalmente
+              antideslizante, perfecta para caminar por casa con total seguridad
+              y confort durante las largas tardes de descanso del fin de semana.
+              Cada costura ha sido reforzada a mano para garantizar la máxima
+              durabilidad del producto.
+            </p>
+          </div>
+
+          <div class="details-specs-block">
+            <div class="spec-row">
+              <span class="spec-label">Material Exterior</span
+              ><span class="spec-value">100% Felpa de Poliéster Suave</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Forro Interior</span
+              ><span class="spec-value">Algodón Térmico Acolchado</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Suela</span
+              ><span class="spec-value">Goma Flexible Antideslizante</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Limpieza</span
+              ><span class="spec-value">Lavado a mano o máquina en frío</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Diseño</span
+              ><span class="spec-value">Relieve 3D Patito de Goma</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Sostenibilidad</span
+              ><span class="spec-value">Materiales Eco-friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REJILLA DE ARTÍCULOS SIMILARES -->
+      <div class="related-section">
+        <h2 class="details-heading">Otros Productos</h2>
+        <div class="related-grid">
+          <a href="#" style="text-decoration: none">
+            <div class="product-card">
+              <div class="card-img-box">
+                <img
+                  src="FotosProducto/pa_botella.png"
+                  alt="La ``Quack-timplora´´"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                  "
+                />
+              </div>
+              <span class="card-fav-icon">♡</span>
+              <h4 class="card-title">La ``Quack-timplora´´</h4>
+              <span class="card-price">25.00 €</span>
+              <button type="button" class="card-btn">Añadir al carrito</button>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none">
+            <div class="product-card">
+              <div class="card-img-box">
+                <img
+                  src="FotosProducto/pa_gorra.png"
+                  alt="Gorro de Pato"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                  "
+                />
+              </div>
+              <span class="card-fav-icon">♡</span>
+              <h4 class="card-title">Gorro</h4>
+              <span class="card-price">15.00 €</span>
+              <button type="button" class="card-btn">Añadir al carrito</button>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none">
+            <div class="product-card">
+              <div class="card-img-box">
+                <img
+                  src="FotosProducto/pa_llavero.png"
+                  alt="Llavero de Pato"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                  "
+                />
+              </div>
+              <span class="card-fav-icon">♡</span>
+              <h4 class="card-title">Llavero</h4>
+              <span class="card-price">15.00 €</span>
+              <button type="button" class="card-btn">Añadir al carrito</button>
+            </div>
+          </a>
+
+          <a href="#" style="text-decoration: none">
+            <div class="product-card">
+              <div class="card-img-box">
+                <img
+                  src="FotosProducto/pa_toalla.png"
+                  alt="Toalla de Pato"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                  "
+                />
+              </div>
+              <span class="card-fav-icon">♡</span>
+              <h4 class="card-title">Toalla</h4>
+              <span class="card-price">35.00 €</span>
+              <button type="button" class="card-btn">Añadir al carrito</button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIE DE PÁGINA OFICIAL DE TU COMPAÑERA -->
+    <footer>
+      <p>&copy; 2026 QuackStore. Stay quacking!</p>
+    </footer>
+  </body>
+</html>
