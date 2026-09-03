@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quack Store</title>
+    
+    <!-- Google Fonts importados para la tipografía de tu styles.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (para el maquetado del catálogo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tu CSS Personalizado (Integrado) -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #fda4af;       
+            --primary-dark: #1e293b;  
+            --secondary-yellow: #fde047;
+            --secondary-blue: #7dd3fc;
+            --background: #f9f9ff;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--background);
+            color: var(--primary-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        header {
+            background-color: var(--secondary-blue); 
+            text-align: center;
+        }
+
+        .header-contenido {
+            display: flex;
+            align-items: center;     
+            justify-content: center; 
+            gap: 12px;  
+            padding: 1.5rem 0.5rem;             
+        }
+
+        .texto-header {
+            text-align: center;
+        }
+
+        .texto-header h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin: 0;
+            color: var(--primary-dark);
+        }
+
+        .texto-header p {
+            font-size: 1rem;
+            color: var(--primary-dark);
+            margin-top: 0.5rem;
+        }
+
+        .linea-pato {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;   
+            gap: 1px;            
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        nav {
+            background-color: var(--primary);
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center; 
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white; 
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-dark);
+        }
+
+        main {
+            padding: 2rem 1rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            nav ul {
+                flex-direction: row; 
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1.5rem; 
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            main {
+                max-width: 1200px; 
+                margin: 0 auto;   
+                padding: 4rem 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+       <div class="header-contenido">
+            <img src="logo_QS_SF.png" alt="Logo de QuackStore" class="logo">
+            <div class="texto-header">
+                <h1>QuackStore</h1>
+                <p>Tu tienda lifestyle de temática pato</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="landing_page.html">Inicio</a></li>
+                <li><a href="catalogue.html">Catálogo</a></li>
+                <li><a href="pagina_contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="flex flex-col items-center justify-center p-8 md:p-12 text-center bg-[#fda4af] rounded-[32px] text-white shadow-lg mb-8">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">¡Bienvenidos a Quack Store!</h2>
+            <p class="text-base md:text-lg mb-8 opacity-90 max-w-xl">Descubre productos adorables y kawaii.</p>
+            <a href="catalogue.html" class="bg-white text-[#1e293b] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-sm inline-block">
+                Ver Productos
+            </a>
+        </section>
+
+        <!-- WHY US SECTION -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
+            <div class="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                <div class="bg-[#fde047] p-3 rounded-full mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#1e293b]"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+                </div>
+                <h4 class="text-xl font-bold mb-2 text-[#1e293b]">Productos Adorables</h4>
+                <p class="text-sm text-[#1e293b] opacity-80">Selección única y adorable seleccionada minuciosamente para ti.</p>
+            </div>
+            <div class="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                <div class="bg-[#fde047] p-3 rounded-full mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#1e293b]"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h4 class="text-xl font-bold mb-2 text-[#1e293b]">Envíos Rápidos</h4>
+                <p class="text-sm text-[#1e293b] opacity-80">Tu pedido llegará en tiempo récord a la puerta de tu hogar.</p>
+            </div>
+            <div class="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                <div class="bg-[#fde047] p-3 rounded-full mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#1e293b]"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </div>
+                <h4 class="text-xl font-bold mb-2 text-[#1e293b]">Calidad Garantizada</h4>
+                <p class="text-sm text-[#1e293b] opacity-80">Cada producto está hecho con mucho amor y materiales duraderos.</p>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS Y SECCIONES LATERALES -->
+        <div id="productos" class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left mb-8">
+            <div class="lg:col-span-2">
+                <section class="bg-white p-6 square-[32px] shadow-sm border-radius-10px  h-full">
+                    <h3 class="text-2xl font-bold mb-6 text-[#1e293b]">Productos Destacados</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-[#f9f9ff] p-4 rounded-3xl flex flex-col items-center border border-gray-50">
+                            <img src="mug.stmp.png" alt="taza patito" class="w-24 h-24 square mb-3 object-cover border-radius-10px shadow-inner" />
+                            <h4 class="text-md font-semibold mb-1 text-center">"Pato-mar" café</h4>
+                            <span class="text-sm font-bold mb-3">15,00€</span>
+                            <a href="#cart-modal" class="bg-[#fde047] text-white px-4 py-2 rounded-full text-xs font-semibold hover:bg-[#fde047] transition">Agregar</a>
+                        </div>
+                        <div class="bg-[#f9f9ff] p-4 rounded-3xl flex flex-col items-center border border-gray-50">
+                            <img src="case.stmp.png" alt="Estuche "Pa-to" class="w-24 h-24 square mb-3 object-cover shadow-inner" />
+                            <h4 class="text-md font-semibold mb-1 text-center">Estuche "Pa-to"</h4>
+                            <span class="text-sm font-bold mb-3">15,00€</span>
+                            <a href="#cart-modal" class="bg-[#fde047] text-white px-4 py-2 rounded-full text-xs font-semibold hover:bg-[#fde047] transition">Agregar</a>
+                        </div>
+                        <div class="bg-[#f9f9ff] p-4 rounded-3xl flex flex-col items-center border border-gray-50">
+                            <img src="pijama.pato.png" alt="Pijama de Patitos" class="w-24 h-24 square mb-3 object-cover shadow-inner" />
+                            <h4 class="text-md font-semibold mb-1 text-center">Pijama: "Quack-lentito"</h4>
+                            <span class="text-sm font-bold mb-3">55,00€</span>
+                            <a href="#cart-modal" class="bg-[#fde047] text-white px-4 py-2 rounded-full text-xs font-semibold hover:bg-[#fde047] transition">Agregar</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="flex flex-col gap-6" id="nosotros">
+                <section class="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 flex-1 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-4 text-[#1e293b]">Sobre Nosotros</h3>
+                    <p class="text-sm text-[#1e293b] leading-relaxed">
+                        En Quack Store, nos enfocamos en proveer productos de alta calidad centrados para traer alegría y ternura a tu vida cotidiana. 
+                        Nuestros productos están seleccionados para hacerte sonreír.
+                    </p>
+                </section>
+
+                <section class="bg-[#7dd3fc]/20 border-2 border-dashed border-[#7dd3fc] rounded-[32px] p-6 flex flex-col items-center justify-center text-center flex-1">
+                    <h3 class="font-bold text-lg mb-2">Únete al Club</h3>
+                    <p class="text-xs opacity-70 mb-4">Recibe novedades cada semana.</p>
+                    <form action="#" class="w-full flex flex-col items-center">
+                        <input type="email" placeholder="Tu email..." class="w-full max-w-sm px-4 py-2 rounded-full text-xs mb-2 border-none shadow-sm outline-none text-slate-800" required />
+                        <button type="submit" class="w-full max-w-sm bg-[#7dd3fc] text-white py-2 rounded-full text-xs font-bold hover:bg-[#6ec2f5] transition">
+                            Suscribirme
+                        </button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 text-left">
+            <h3 class="text-2xl font-bold mb-6 text-[#1e293b]">Testimonios</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-[#f9f9ff] rounded-2xl border border-gray-100">
+                    <p class="text-sm text-[#1e293b] mb-2 italic">"¡Todo es tan adorable! Me encanta, tienen una buena atención al cliente."</p>
+                    <span class="font-bold text-xs text-[#fda4af]">- Ana</span>
+                </div>
+                <div class="p-4 bg-[#f9f9ff] rounded-2xl border border-gray-100">
+                    <p class="text-sm text-[#1e293b] mb-2 italic">"Envío muy rápido y excelente calidad.La ropa venía empaquetada con mucho cuidado y un detalle bonito dentro. ¡Un servicio de 10!"</p>
+                    <span class="font-bold text-xs text-[#fda4af]">- Luis</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SEGÚN TU STYLES.CSS -->
+    <footer>
+        <p>&copy; 2026 Quack Store. Stay Quacky!</p>
+    </footer>
+
+
+    </div>
+
+</body>
+</html>
