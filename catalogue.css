@@ -1,0 +1,604 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #fde047;
+    --primary-border: #897700;         
+    --secondary-pink: #fda4af;
+    --secondary-pink-border:#571C27;
+    --secondary-blue: #7dd3fc;
+    --secondary-blue-border: #006686;
+    --neutral-navy: #111C2F;  
+    --slider: #7BD1FA;
+    --price-tag: #545F73;  
+    --background: #ffffff;
+    --third-blue: #E5EDFF;
+    --border-color: #f4f4f5;
+}
+
+body{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--background);
+    color: var(--neutral-navy);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header y footer*/
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+header {
+    background-color: var(--secondary-blue); 
+    text-align: center;
+}
+
+.header-contenido {
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+    gap: 8px;  
+    padding: 1rem 0.5rem;             
+}
+
+.texto-header {
+    text-align: center;
+}
+
+.texto-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--neutral-navy);
+}
+
+.texto-header p {
+    font-size: 1rem;
+    color: var(--neutral-navy);
+    margin-top: 0.5rem;
+}
+
+.linea-pato {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;   
+    gap: 1px;            
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--neutral-navy);
+    margin: 0;
+}
+
+nav {
+    background-color: var(--secondary-pink);
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    gap: 5rem;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--background); 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: var(--primary-dark);
+}
+
+main {
+    padding: 2rem 1rem;
+    flex: 1;
+}
+
+footer {
+    background-color: var(--secondary-pink);
+    color: var(--background);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+
+/* Main */
+
+main{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex: 1;
+    gap: 2.5rem;
+    width: 90%;
+}
+
+.page-title{
+    width: 100%;    
+    font-size: 1.35rem;
+    margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    color: var(--neutral-navy);
+    flex-shrink: 1;
+}
+
+.page-title span{
+    color: var(--secondary-blue);
+    font-style: italic;
+    font-weight: 50px;
+    flex-shrink: 1;
+}
+
+/* Main content (product display) */
+
+.catalogue{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    max-width: fit-content;
+    width: 1500px;
+    flex: 1;
+}
+
+.category-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: space-between;
+    grid-gap: 2%;
+    flex-shrink: 1;
+    width: 100%;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width: fit-content;
+    max-width: 240px; 
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Catalogue (categories) */
+
+.container-catalogue{
+    background-color: var(--third-blue);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    flex-shrink: 1;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.container-catalogue h2{
+    font-family: 'Playfair Display', serif;
+    color: var(--neutral-navy);
+    font-size: 1.25rem;
+    margin-left: 25px;
+    margin-top: 20px;
+    text-align: left;
+    flex-shrink: 1;
+}
+
+.categories{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    flex-shrink: 1;
+}
+
+.categories li{
+    font-size: 0.8rem;
+    background-color: var(--background);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    height: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+    padding-left: 20px;
+    flex-shrink: 1;
+}
+
+.categories li:hover{
+    background-color: var(--primary);
+    font-weight: 600;
+}
+
+/* Filtros */
+
+.container-filter{
+    font-family: 'Be Vietnam Pro';
+    background-color: var(--third-blue);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    margin-top: 25px;
+    flex-shrink: 1;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.container-filter h2{
+    font-family: 'Playfair Display', serif;
+    color: var(--neutral-navy);
+    font-size: 1.45rem;
+    text-align: left;
+    margin-bottom: 15px;
+    flex-shrink: 1;
+}
+
+.container-filter ul{
+    list-style: none;
+    flex-shrink: 1;
+}
+
+.container-filter h3{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--neutral-navy);
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-shrink: 1;
+}
+
+.size{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-items: space-between;
+    padding: 1%;
+    gap: 0.4rem;
+    flex-shrink: 1;
+}
+
+.size li{
+    font-size: 0.8rem;
+    background-color: var(--background);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+}
+
+.size li:hover{
+    background-color: var(--primary);
+    font-weight: 600;
+}
+
+/* Color */
+
+.colors{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    border-color: var(--background);
+    flex-shrink: 1;
+}
+
+.yellow{
+    background-color: var(--primary);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.yellow:hover{
+    border-color: var(--primary-border);
+}
+
+.pink{
+    background-color: var(--secondary-pink);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.pink:hover{
+    border-color: var(--secondary-pink-border);
+}
+
+.blue{
+    background-color: var(--secondary-blue);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.blue:hover{
+    border-color: var(--secondary-blue-border);
+}
+
+.white{
+    background-color: var(--background);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.white:hover:hover{
+    border-color: var(--border-color);
+}
+
+/* Precio */
+
+.price-slider{
+    width: 100%;
+    padding: 10px;
+    accent-color: var(--slider);
+    align-items: center;
+    justify-content: center;   
+}
+
+.price-range{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--price-tag);
+    padding-top: 5px;
+}
+
+/* Catálogo (product cards) */
+
+.category-title{
+    font-family: 'Playfair Display', serif;
+    color: var(--neutral-navy);
+    font-size: 1.5rem;
+    display: block;
+    inline-size: 100%;
+    text-align: left;
+    flex-shrink: 1;
+}
+
+.category-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: space-around;
+    width: 100%;
+    align-items: center;
+    flex-shrink: 1;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex: 1;
+}
+
+.card{
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.8rem;
+    width: 100%;
+    min-width: 75px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-shrink: 1;
+}
+
+.card-image{
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.card-image img{
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    margin-bottom: 1rem;
+    background-color: var(--third-blue);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.wishlist-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--neutral-navy);
+    background-color: var(--background);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wishlist-btn:hover{
+    color: var(--secondary-pink-border);
+    background-color: var(--secondary-pink);
+}
+
+.card h4{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--neutral-navy);
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.card h4 a{
+    text-decoration: none;
+    color: var(--neutral-navy)
+}
+
+.price{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--price-tag);
+    text-align: left;
+    font-weight: 300;
+    padding-bottom: 5px;
+}
+
+.add-cart{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 600;
+    background-color: var(--primary);
+    color: var(--neutral-navy);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.badge{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: var(--background);
+    color: var(--neutral-navy);
+    padding: 0.2rem 0.5rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.65rem;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+/* Cambio de la página cuando se reduce el tamaño, para evitar deformaciones */
+
+@media (max-width: 1131px) {
+    /* Cambio de los productos */
+    .category-block {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem;
+    }
+
+}
+
+@media (max-width: 858px) {
+    /* Cambio de los productos */
+    .category-block {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Cambiamos la orientación principal verticalmente */
+    main {
+        flex-direction: column;
+        width: 95%;
+        padding: 1rem 0.5rem;
+        gap: 1.5rem;
+    }
+
+    /* El sidebar ahora ocupa todo el ancho arriba del catálogo */
+    .sidebar{
+        max-width: 100%;
+        width: 100%;
+        max-height: auto;
+        height: 100%;
+    }
+
+    /* Ajuste visual para no ocupar tanto espacio vertical en móviles */
+    .container-catalogue,
+    .container-filter {
+        margin-top: 10px;
+        height: auto;
+    }
+
+    .container-catalogue h2 {
+        font-size: medium;
+    }
+
+    .container-filter h2 {
+        font-size: x-large;
+    }
+
+    /* Convertimos la lista de categorías en botones horizontales desplazables */
+    .categories {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .categories li {
+        margin: 1;
+        padding: 6px 14px;
+    }
+
+    .size{
+        margin: 0;
+        padding: 0;
+        justify-content: left;
+    }
+
+    /* Reducimos el catálogo a 1 o 2 columnas en móvil en vez de 3 */
+    .category-block {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem;
+        width: 50% 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Para pantallas muy pequeñas (smartphones), 1 sola columna */
+    .category-block {
+        grid-template-columns: 1fr;
+    }
+}
