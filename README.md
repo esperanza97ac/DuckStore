@@ -43,11 +43,11 @@ Tu tienda on-line divertida, rápida e intuitiva diseñada para ofrecer una expe
 
 Este proyecto ha sido desarrollado en equipo como trabajo práctico para el módulo Fullstack. 
 
-* 👩‍💻 **Esperanza     (https://github.com)**
+* 👩‍💻 **Esperanza     (https://github.comesperanza97ac)**
 * 👩‍💻 **Naomi         (https://github.com/naomitudic)**
-* 👩‍💻 **Josselin      (https://github.com)**
+* 👩‍💻 **Josselin      (https://github.com/Josselinfl)**
 * 👨‍💻 **Favio         (https://github.com/Favio1000)**
-* 👨‍💻 **Denis         (https://github.com)**
+* 👨‍💻 **Denis         (https://github.com/divasilachi)**
 
 ---
 
