@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="catalogue.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Catálogo</title>
+    <style>
+      /* Estilos para el botón (20% más pequeño) */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 16px auto;
+      }
+
+      /* Líneas triples estilizadas */
+      .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff !important;
+        border-radius: 3px;
+        display: block;
+      }
+
+      /* --- CAMBIOS DRÁSTICOS PARA MÓVIL --- */
+      @media (max-width: 767px) {
+        /* Forzamos a la barra rosa a expandirse por completo */
+        nav {
+          display: block !important;
+          width: 100% !important;
+          min-height: 65px !important;
+          background-color: var(--secondary-pink) !important;
+          margin: 0 !important;
+          padding: 5px 0 !important;
+        }
+
+        .menu-toggle {
+          display: flex !important;
+        }
+
+        /* Enlaces ocultos en vertical */
+        nav ul.nav-menu {
+          display: none !important;
+          flex-direction: column !important;
+          gap: 1.5rem !important;
+          padding: 1.5rem 0 !important;
+          width: 100% !important;
+          margin: 0 !important;
+          background-color: var(--secondary-pink) !important;
+        }
+
+        /* Al hacer clic, se despliega sobre fondo rosa */
+        nav ul.nav-menu.active {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-contenido">
+        <img
+          src="FotosProducto/logo_QS_SF.png"
+          alt="Logo de QuackStore"
+          class="logo"
+        />
+        <div class="texto-header">
+          <h1>QuackStore</h1>
+          <p>Tu tienda lifestyle de temática pato</p>
+        </div>
+      </div>
+      <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogue.html">Catálogo</a></li>
+          <li><a href="pagina_contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-title">
+      <h1>El Estanque de <span>Productos</span></h1>
+    </section>
+
+    <main>
+      <aside class="sidebar">
+        <section class="container-catalogue">
+          <h2>Categorías</h2>
+          <ul class="categories">
+            <li>Papelería & Escritorio</li>
+            <li>Ropa & Descanso</li>
+            <li>Calzado</li>
+            <li>Hogar & Cocina</li>
+            <li>Accesorios & Tech</li>
+            <li>Baño & Verano</li>
+          </ul>
+        </section>
+
+        <section class="container-filter">
+          <h2>Filtros</h2>
+          <ul class="filter">
+            <li>
+              <h3>Talla</h3>
+              <ul class="size">
+                <li>XS</li>
+                <li>S</li>
+                <li>M</li>
+                <li>L</li>
+                <li>XL</li>
+              </ul>
+            </li>
+
+            <li>
+              <h3>Color</h3>
+              <ul class="colors">
+                <span class="yellow"></span>
+                <span class="pink"></span>
+                <span class="blue"></span>
+                <span class="white"></span>
+              </ul>
+            </li>
+
+            <li>
+              <h3>Precio</h3>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="price-slider"
+              />
+              <p class="price-range">
+                <span>0€</span>
+                <span>100€</span>
+              </p>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="catalogue">
+        <h2 class="category-title">Papelería & Escritorio</h2>
+        <section class="category-block">
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Papelería y escritorio/nb.pato.png"
+                class="card-image"
+              />
+            </section>
+            <h4>El "Quack-derno"</h4>
+            <p class="price">10,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Papelería y escritorio/case.stmp.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Estuche "Pa-to"</h4>
+            <p class="price">15,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">Agotado</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Papelería y escritorio/agenda.minipros.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Agenda "Quack-drate"</h4>
+            <p class="price">25,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+        </section>
+
+        <h2 class="category-title">Ropa & Descanso</h2>
+        <section class="category-block">
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Ropa y descanso/pijama.pato.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Pijama "Quack-lentito"</h4>
+            <p class="price">55,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge_not">Agotado</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Ropa y descanso/pijama.stmpr.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Pijama "Pati-corto"</h4>
+            <p class="price">30,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Ropa y descanso/pijama.stmp.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Pijama "Pati-largo"</h4>
+            <p class="price">40,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+        </section>
+
+        <h2 class="category-title">Calzado</h2>
+        <section class="category-block">
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img src="img.cat/Calzado/shoes.pato.png" class="card-image" />
+            </section>
+            <h4><a href="producto.html">Las "Patuflas"</a></h4>
+            <p class="price">30,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img src="img.cat/Calzado/chancla.blaca.png" class="card-image" />
+            </section>
+            <h4>Las "Quack-cletas"</h4>
+            <p class="price">17,50€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img src="img.cat/Calzado/shoks.stmp.png" class="card-image" />
+            </section>
+            <h4>Los "Quack-cetines"</h4>
+            <p class="price">12,50€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+        </section>
+
+        <h2 class="category-title">Hogar & Cocina</h2>
+        <section class="category-block">
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Hogar y cocina/botella.stmpros.png"
+                class="card-image"
+              />
+            </section>
+            <h4>La "Quack-timplora"</h4>
+            <p class="price">25,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Hogar y cocina/mug.stmp.png"
+                class="card-image"
+              />
+            </section>
+            <h4>"Pato-mar" café</h4>
+            <p class="price">15,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge_not">Agotado</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Hogar y cocina/plato.stpm.yel.png"
+                class="card-image"
+              />
+            </section>
+            <h4>El "P(l)ato"</h4>
+            <p class="price">10,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+        </section>
+
+        <h2 class="category-title">Accesorios & Tecnología</h2>
+        <section class="category-block">
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Accesorios y tecnología/llavero.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Llavero muy "Quack-qui"</h4>
+            <p class="price">15,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge_not">Agotado</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Accesorios y tecnología/pcover.stmp.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Funda de "Quack-phone"</h4>
+            <p class="price">17,50€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Accesorios y tecnología/paraguas.stmp.png"
+                class="card-image"
+              />
+            </section>
+            <h4>El "Pata-guas"</h4>
+            <p class="price">20,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+        </section>
+
+        <h2 class="category-title">Baño & Verano</h2>
+        <section class="category-block">
+          <section class="card">
+            <section class="card-image">
+              <span class="badge_not">Agotado</span>
+              <button class="wishlist-btn">♡</button>
+              <img
+                src="img.cat/Baño y verano/albornoz.stmp.png"
+                class="card-image"
+              />
+            </section>
+            <h4>Albornoz de "Quack-lidad"</h4>
+            <p class="price">45,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge">En Stock</span>
+              <button class="wishlist-btn">♡</button>
+              <img src="img.cat/Baño y verano/hatpato.png" class="card-image" />
+            </section>
+            <h4>Gorro "Pata-par"</h4>
+            <p class="price">15,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+
+          <section class="card">
+            <section class="card-image">
+              <span class="badge_not">Agotado</span>
+              <button class="wishlist-btn">♡</button>
+              <img src="img.cat/Baño y verano/toalla.png" class="card-image" />
+            </section>
+            <h4>Toalla "Pa(secar)to"</h4>
+            <p class="price">35,00€</p>
+            <button class="add-cart">Añade al carrito</button>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 QuackStore. Stay Quacky!</p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

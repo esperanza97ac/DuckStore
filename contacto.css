@@ -1,0 +1,249 @@
+.introduccion {
+  /* 1. TRUCO GRID: Obliga a esta sección a ocupar TODO el ancho de la pantalla (las dos columnas) */
+  grid-column: 1 / -1;
+
+  /* 2. ALINEACIÓN: Centramos todos los textos del bloque */
+  text-align: center;
+
+  /* 3. ESPACIADO (Márgenes): Damos aire arriba y un buen espacio abajo antes de las tarjetas */
+  margin: 20px auto 40px auto;
+
+  /* 4. ANCHO MÁXIMO: Evita que el párrafo se estire demasiado hacia los lados y sea difícil de leer */
+  max-width: 650px;
+}
+.indroduccion-texto {
+  margin-top: 20px;
+}
+.contenedor-principal {
+  /* Activamos el modo rejilla invisible */
+  display: grid;
+
+  /* Definimos dos columnas: la primera mide el doble (2fr) que la segunda (1fr) */
+  grid-template-columns: 6fr 5fr;
+
+  /* Creamos el espacio de separación entre los bloques */
+  gap: 20px;
+
+  /* Centramos todo el bloque en la pantalla y le damos un ancho máximo */
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 15px;
+  align-items: start; /* Alinea los elementos al inicio vertical y evita que se estiren por defecto */
+}
+
+/* 2. ACOMODAMOS LAS PIEZAS EN LA REJILLA */
+
+/* Queremos que el formulario ocupe toda la altura de la izquierda */
+.formulario {
+  /* Le decimos que empiece en la fila 1 y se estire hasta la fila 3 */
+  grid-row: 1 / 3;
+  background-color: rgb(231 238 255 /1); /* Un fondo sutil */
+}
+/* La información se colocará sola en la columna derecha, fila 1 */
+.informacion {
+  background-color: rgb(255 217 220 /1); /* Un fondo sutil */
+}
+
+/* El mapa se colocará solo en la columna derecha, fila 2 */
+
+/* 3. ESTILO VISUAL COMÚN (Para que se vea bonito) */
+.tarjeta {
+  padding: 25px 40px;
+  border-radius: 25px;
+}
+
+/* 1. ESPACIADO ENTRE CAMPOS */
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Separa verticalmente cada grupo de campo */
+}
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Separa la etiqueta (label) del cuadro de texto */
+}
+/* CONFIGURACIÓN DE LA FILA COMPARTIDA */
+.fila-campos {
+  display: flex; /* Activa el modo fila horizontal */
+  gap: 20px; /* Separa el campo Nombre del campo Correo */
+  width: 100%;
+}
+
+/* Forzamos a que los dos campos de adentro midan exactamente lo mismo */
+.fila-campos .grupo-campo {
+  flex: 1;
+}
+.grupo-campo label {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333333;
+}
+.grupo-campo input {
+  height: 50px; /* Altura fija para los campos de texto */
+}
+/* 3. ESTILO DE LOS CAMPOS DE TEXTO (INPUTS Y TEXTAREA) */
+.grupo-campo input,
+.grupo-campo textarea {
+  width: 100%; /* Ocupan todo el ancho disponible */
+  padding: 12px 15px; /* Espacio interior para que el texto respire */
+  border: 1px solid #232331;
+  border-radius: 15px; /* Bordes ligeramente redondeados */
+  font-size: 15px;
+  font-family: inherit; /* Hereda la tipografía del proyecto */
+  background-color: #ffffff;
+  box-sizing: border-box; /* Evita que el padding deforme el ancho total */
+  transition: all 0.3s ease; /* Transición suave para el enfoque */
+}
+/* El truco del "Focus": Qué pasa cuando el usuario hace clic para escribir */
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+  outline: none; /* Quitamos el borde azul feo por defecto del navegador */
+  border-color: #4a3728; /* Cambia al color de tu marca */
+  box-shadow: 0 0 0 3px rgba(74, 55, 40, 0.1); /* Crea un aura suave alrededor */
+}
+/* Evita que el usuario estire el textarea de forma horizontal y rompa el diseño */
+.grupo-campo textarea {
+  resize: vertical;
+}
+/* 4. ESTILO DEL BOTÓN */
+.boton-enviar {
+  background-color: rgb(253 224 71 /1);
+  color: rgb(114 99 0 /1);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+  display: inline-flex; /* Activa flexbox manteniendo el botón compacto */
+  align-items: center; /* Centra verticalmente el texto y el icono */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  gap: 10px; /* Separa el texto del icono */
+}
+/* Controlamos el tamaño exacto del icono del botón */
+.boton-enviar .icono-btn {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease; /* Para animarlo al pasar el ratón */
+}
+/* 🌟 ROTACIÓN DEL AVIÓN PARA PONERLO HORIZONTAL 🌟 */
+.icono-avion {
+  /* Rotamos 45 grados a la derecha para que la punta mire al frente */
+  transform: rotate(45deg);
+
+  /* Aseguramos que la animación de hover funcione de forma fluida */
+  transition: transform 0.2s ease;
+}
+
+/* 💡 EFECTO HOVER ACTUALIZADO: Simulamos que el avión despega */
+.boton-enviar:hover .icono-avion {
+  /* Cuando pasas el ratón, mantiene los 45 grados pero se desplaza 4 píxeles a la derecha */
+  transform: rotate(45deg);
+}
+
+.icono-boton {
+  width: 10px; /* Ajusta el tamaño del icono según tus necesidades */
+  height: 10px;
+}
+/* Efecto al pasar el ratón por encima del botón */
+.boton-enviar:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE (Para teléfonos móviles y tabletas)
+   ========================================================================== */
+
+/* Esta regla solo se activará si la pantalla mide 768 píxeles de ancho o MENOS */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    /* 1. Reducimos las columnas de dos a UNA SOLA COLUMNA */
+    grid-template-columns: 1fr;
+
+    /* 2. Reducimos un poco el espacio de separación para aprovechar la pantalla */
+    gap: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    grid-row: auto; /* Importante para no tener problemas de diseño el la columna */
+    /* 🌟 HACE QUE EN MÓVIL SE VUELVAN A PONER UNO DEBAJO DEL OTRO 🌟 */
+    .fila-campos {
+      flex-direction: column;
+      gap: 20px; /* Mantiene la separación vertical en el celular */
+    }
+  }
+  .formulario {
+    /* Reducimos un poco el relleno interno para que los campos tengan más espacio */
+    padding: 20px;
+  }
+}
+
+/* 2. LIMPIEZA DE LA LISTA */
+.lista-contacto {
+  list-style: none; /* Quitamos los puntos negros por defecto de las listas */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Separación vertical entre cada dato de contacto */
+}
+.lista-contacto li {
+  display: flex; /* 1. Activa el modo fila (de izquierda a derecha) */
+  align-items: flex-start; /* 2. Alinea el icono con la parte superior del texto */
+  gap: 18px; /* 3. Crea el espacio de separación exacto entre el icono y el texto */
+  width: 100%;
+}
+/* 4. ESTILO DEL ICONO */
+.lista-contacto .icono {
+  font-size: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 50%; /* Hace que el fondo del icono sea un círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+}
+/* 5. BLOQUE DE TEXTO */
+.texto-contacto {
+  display: flex;
+  flex-direction: column; /* Apila el título arriba y el dato abajo */
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+}
+.texto-contacto span,
+.texto-contacto a {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Efecto hover elegante para los enlaces clickeables (teléfono y email) */
+.texto-contacto a:hover {
+  color: #8b5a2b; /* Cambia a un color marrón más claro al pasar el ratón */
+  text-decoration: underline; /* Muestra un subrayado sutil */
+}
+
+/* 1. LA TARJETA CONTENEDORA DEL MAPA */
+.tarjeta-mapa {
+  /* Le damos el mismo borde y esquinas que a las otras tarjetas */
+  padding: 0px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden; /* Corta el mapa para que respete las esquinas redondeadas */
+
+  /* Hacemos que se estire al 100% del alto que le otorgue el Grid */
+  height: 100%;
+  display: flex; /* Quita un pequeño espacio en blanco que los iframe dejan abajo por defecto */
+}
+/* 2. EL MAPA POR DENTRO */
+.tarjeta-mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 300px; /* Garantiza una buena altura visual en pantallas verticales o móviles */
+}

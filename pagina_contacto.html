@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="contacto.css" />
+    <link rel="stylesheet" href="styles_contacto.css" />
+    <title>QuackStore</title>
+    <script src="script_contacto.js" defer></script>
+    <style>
+      /* Estilos para el botón (20% más pequeño) */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 16px auto;
+      }
+
+      /* Líneas triples estilizadas */
+      .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff !important;
+        border-radius: 3px;
+        display: block;
+      }
+
+      /* --- CAMBIOS DRÁSTICOS PARA MÓVIL --- */
+      @media (max-width: 767px) {
+        /* Forzamos a la barra rosa a expandirse por completo */
+        nav {
+          display: block !important;
+          width: 100% !important;
+          min-height: 65px !important;
+          background-color: var(--primary) !important;
+          margin: 0 !important;
+          padding: 5px 0 !important;
+        }
+
+        .menu-toggle {
+          display: flex !important;
+        }
+
+        /* Enlaces ocultos en vertical */
+        nav ul.nav-menu {
+          display: none !important;
+          flex-direction: column !important;
+          gap: 1.5rem !important;
+          padding: 1.5rem 0 !important;
+          width: 100% !important;
+          margin: 0 !important;
+          background-color: var(--primary) !important;
+        }
+
+        /* Al hacer clic, se despliega sobre fondo rosa */
+        nav ul.nav-menu.active {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-contenido">
+        <img
+          src="FotosProducto/logo_QS_SF.png"
+          alt="Logo de QuackStore"
+          class="logo"
+        />
+        <div class="texto-header">
+          <h1>QuackStore</h1>
+          <p>Tu tienda lifestyle de temática pato</p>
+        </div>
+      </div>
+      <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogue.html">Catálogo</a></li>
+          <li><a href="pagina_contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article class="introduccion">
+        <h2>Contacta con el Estanque</h2>
+        <p class="indroduccion-texto">
+          ¿Tienes alguna pregunta sobre nuestros patos de colección?¿Necesitas
+          ayuda con un pedido?Estamos aqui para ayudarte amantener tu colección
+          impecable.
+        </p>
+      </article>
+      <!-- Bloque 1: El Formulario -->
+      <section class="contenedor-principal">
+        <section class="tarjeta formulario">
+          <h3>Envíanos un Mensaje</h3>
+          <!-- Aquí irán tus inputs más adelante -->
+          <form
+            action="#"
+            method="POST"
+            id="miFormulario"
+            class="formulario-contacto"
+            novalidate
+          >
+            <!-- Grupo 1: Nombre -->
+            <section class="fila-campos">
+              <!-- Campo: Nombre -->
+              <section class="grupo-campo">
+                <label for="nombre">Nombre</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  class="validable"
+                  name="nombre"
+                  placeholder="Tu nombre"
+                  required
+                />
+              </section>
+
+              <!-- Campo: Correo -->
+              <section class="grupo-campo">
+                <label for="correo">Correo Electrónico</label>
+                <input
+                  type="email"
+                  id="correo"
+                  class="validable"
+                  name="correo"
+                  placeholder="tu@email.com"
+                  required
+                />
+              </section>
+            </section>
+
+            <!-- Campo: Asunto (Nuevo campo que ocupa todo el ancho) -->
+            <section class="grupo-campo">
+              <label for="asunto">Asunto</label>
+              <input
+                type="text"
+                id="asunto"
+                class="validable"
+                name="asunto"
+                placeholder="¿En qué podemos ayudarte?"
+                required
+              />
+            </section>
+
+            <!-- Grupo 3: Mensaje -->
+            <section class="grupo-campo">
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                class="validable"
+                name="mensaje"
+                rows="6"
+                placeholder="Escribe tu mensaje aquí..."
+                required
+              ></textarea>
+            </section>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="boton-enviar">
+              <span>Enviar Mensaje</span>
+              <!-- Icono del avión de papel estándar -->
+              <svg
+                class="icono-btn icono-avion"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </section>
+
+        <!-- Bloque 2: Datos de Contacto -->
+        <section class="tarjeta informacion">
+          <h3>Encuéntranos</h3>
+          <!-- Aquí irán tus teléfonos y emails -->
+          <ul class="lista-contacto">
+            <li>
+              <span class="icono"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <article class="texto-contacto">
+                <strong>Dirección</strong>
+                <span
+                  >Calle del Estanque, 42, <br />
+                  28001 Madrid</span
+                >
+              </article>
+            </li>
+
+            <li>
+              <span class="icono"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              </span>
+              <article class="texto-contacto">
+                <strong>Teléfono</strong>
+                <a href="tel:+34912345678">+34 912 345 678</a>
+              </article>
+            </li>
+
+            <li>
+              <span class="icono"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <article class="texto-contacto">
+                <strong>Correo electrónico</strong>
+                <a href="mailto:info@duckstore.com">info@duckstore.com</a>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Bloque 3: Ubicación / Mapa -->
+        <section class="tarjeta-mapa">
+          <!-- Aquí irá tu mapa -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3043.204987275067!2d-3.8190064887142294!3d40.293407271340506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418b849458cdb3%3A0x6967a4c7e325eb2b!2sC.%20del%20Estanque%2C%2042%2C%2028942%20Fuenlabrada%2C%20Madrid!5e0!3m2!1ses-419!2ses!4v1788349631014!5m2!1ses-419!2ses"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 QuackStore. Stay quacking!</p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
