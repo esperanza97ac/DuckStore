@@ -10,8 +10,6 @@ Tu tienda on-line divertida, rápida e intuitiva diseñada para ofrecer una expe
 - [Características Principales](#-características-principales)
 - [Stack Tecnológico](#-stack-tecnológico)
 - [Requisitos Previos](#-requisitos-previos)
-- [Instalación y Configuración](#-instalación-y-configuración)
-- [Contribución](#-contribución)
 
 ---
 
