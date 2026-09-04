@@ -17,8 +17,8 @@
 
     <style>
       /* ==========================================================================
-           1. ESTILOS EXCLUSIVOS DE LA FICHA DE PRODUCTO
-           ========================================================================== */
+             1. ESTILOS EXCLUSIVOS DE LA FICHA DE PRODUCTO
+             ========================================================================== */
       .component-wrapper {
         max-width: 1100px;
         width: 100%;
@@ -379,6 +379,64 @@
           grid-template-columns: repeat(2, 1fr);
         }
       }
+
+      /* Estilos para el botón a gran escala */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 38px; /* Mucho más ancho */
+        height: 26px; /* Más alto para dar presencia */
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 20px auto; /* Más margen arriba y abajo para agrandar la tira rosa */
+      }
+
+      /* Líneas triples más gruesas y visibles */
+      .menu-toggle span {
+        width: 100%;
+        height: 4px; /* El doble de grosor (antes 2px) */
+        background-color: #ffffff !important; /* Blanco puro garantizado */
+        border-radius: 4px;
+        display: block;
+      }
+
+      /* --- CAMBIOS DRÁSTICOS PARA MÓVIL --- */
+      @media (max-width: 767px) {
+        /* Forzamos a la barra rosa a expandirse por completo */
+        nav {
+          display: block !important;
+          width: 100% !important;
+          min-height: 65px !important; /* Altura mínima gigante para tragar la línea azul */
+          background-color: var(
+            --primary
+          ) !important; /* Forzamos vuestro rosa */
+          margin: 0 !important;
+          padding: 5px 0 !important;
+        }
+
+        .menu-toggle {
+          display: flex !important; /* Muestra el botón grande */
+        }
+
+        /* Enlaces ocultos en vertical */
+        nav ul.nav-menu {
+          display: none !important;
+          flex-direction: column !important;
+          gap: 1.5rem !important;
+          padding: 1.5rem 0 !important;
+          width: 100% !important;
+          margin: 0 !important;
+          background-color: var(--primary) !important;
+        }
+
+        /* Al hacer clic, se despliega sobre fondo rosa */
+        nav ul.nav-menu.active {
+          display: flex !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -396,7 +454,13 @@
         </div>
       </div>
       <nav>
-        <ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu">
           <li><a href="landing_page.html">Inicio</a></li>
           <li><a href="catalogue.html">Catálogo</a></li>
           <li><a href="pagina_contacto.html">Contacto</a></li>
@@ -704,5 +768,6 @@
     <footer>
       <p>&copy; 2026 QuackStore. Stay quacking!</p>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
