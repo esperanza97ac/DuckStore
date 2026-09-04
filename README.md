@@ -9,7 +9,7 @@ Tu tienda on-line divertida, rápida e intuitiva diseñada para ofrecer una expe
 - [Acerca del Proyecto](#-acerca-del-proyecto)
 - [Características Principales](#-características-principales)
 - [Stack Tecnológico](#-stack-tecnológico)
-- [Requisitos Previos](#-requisitos-previos)
+- [Autores y Contribución](#-autores-y-contribucion)
 
 ---
 
